@@ -32,7 +32,6 @@ class HomeView extends GetView<HomeController> {
                   thickness: 5,
                   interactive: true,
                   child: ListView.separated(
-                    // itemCount: controller.postList.length,
                     itemCount: 10,
                     physics: const BouncingScrollPhysics(),
                     padding: EdgeInsets.zero,
@@ -40,10 +39,6 @@ class HomeView extends GetView<HomeController> {
                       height: 20.h,
                     ),
                     itemBuilder: (ctx, index) => GestureDetector(
-                      // onTap: () async {
-                      //   await controller
-                      //       .getPostDetail(controller.postList[index].id);
-                      // },
                       onTap: () => Get.to(() => const PostDetailView(),
                           binding: HomeBinding()),
                       child: Container(
@@ -52,7 +47,6 @@ class HomeView extends GetView<HomeController> {
                         color: theme.canvasColor,
                         child: Center(
                           child: Text(
-                            // controller.postList[index].title ?? "",
                             'title',
                             textAlign: TextAlign.center,
                             style: TextStyle(
